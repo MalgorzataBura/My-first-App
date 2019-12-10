@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url("../../src/components/images/water-373780_1920.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+header {
+  font-size: 7em;
+  text-align: center;
+  display: inline;
+}
+.clock {
+  font-size: 1.2em;
+  text-align: center;
+}
+form {
+  font-size: 3em;
+  text-align: center;
+}
+input {
+  height: 30px;
+  width: 400px;
+  font-size: 0.5em;
+}
+button {
+  height: 30px;
+  font-size: 0.3em;
+}
+.result {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.resultErr {
+  font-size: 35px;
+  text-align: center;
+  font-weight: bold;
+}
+.table {
+  color: black;
+  width: 550px;
+  height: 550px;
+  font-size: 25px;
+  text-align: center;
+  // background-color: #05163c;
+  opacity: 80%;
+  line-height: 50px;
+}
+.image {
+  width: 3em;
+  height: 3em;
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+}
+.weatherContainer {
+  height: 100px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.btn {
+  width: 80px;
+  font-size: 20px;
+}
+
+.container {
+  position: relative;
+}
+.container_result {
+  position: absolute;
+  background-color: black;
+  bottom: 10px;
+}
+.div {
+  position: absolute;
+  height: 400px;
+  width: 400px;
+  background-color: black;
+  top: 200px;
+  z-index: 1000;
+}
+#map {
+  position: relative;
+  z-index: 0;
+}
+.leaflet-pane {
+  .leaflet-map-pane {
+    position: relative;
+    z-index: 0;
+  }
+}

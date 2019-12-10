@@ -1,0 +1,26 @@
+{
+  "main": {
+    "temp": "temp",
+    "pressure": "pressure",
+    "humidity": "humidity",
+    "temp_min": "temp. min",
+    "temp_max": "temp. max",
+    "wind": "wind"
+  },
+  "search": {
+    "wyszukaj miasto": "Find city",
+    "wpisz miasto": "enter city",
+    "pogoda dla miasta": "Weather for the city:"
+  },
+  "sys": {
+    "sunrise": "sunrise",
+    "sunset": "sunset"
+  },
+  "weather": {
+    "Snow ": "Snow",
+    "Rain": "Rain",
+    "Thunderstorm": "Thunderstorm",
+    "Clouds": "Clouds",
+    "Drizzle": "Drizzle"
+  }
+}

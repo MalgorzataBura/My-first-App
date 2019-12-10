@@ -1,0 +1,26 @@
+{
+  "main": {
+    "temp": "temperatura",
+    "pressure": "ciśnienie",
+    "humidity": "zachmurzenie",
+    "temp_min": "min temp.",
+    "temp_max": "max temp.",
+    "wind": "wiatr"
+  },
+  "search": {
+    "wyszukaj miasto": "wyszukaj miasto",
+    "wpisz miasto": "wpisz miasto",
+    "pogoda dla miasta": "Pogoda dla miasta:"
+  },
+  "sys": {
+    "sunrise": "wschód słońca",
+    "sunset": "zachód słońca"
+  },
+  "weather": {
+    "Snow ": "Śnieg",
+    "Rain": "Deszcz",
+    "Thunderstorm": "Burza",
+    "Clouds": "Pochmurno",
+    "Drizzle": "Mżawka"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "main": {
+    "temp": "Temperatur",
+    "pressure": "Druck",
+    "humidity": "Trub",
+    "temp_min": "temp. min",
+    "temp_max": "temp. max.",
+    "wind": "Wind"
+  },
+  "search": {
+    "wyszukaj miasto": "Stadt finden",
+    "wpisz miasto": "Stadt eingeben",
+    "pogoda dla miasta": "Wetter für die Stadt:"
+  },
+  "sys": {
+    "sunrise": "Sonnenaufgang",
+    "sunset": "Sonnenuntergang"
+  },
+  "weather": {
+    "Snow ": "Schnee",
+    "Rain": "Regen",
+    "Thunderstorm": "Gewitter",
+    "Clouds": "Wolken",
+    "Drizzle": "Nieseln"
+  }
+}
