@@ -1,6 +1,8 @@
 import React from 'react';
 import L from 'leaflet';
 import Result from './Result';
+import '../../scss/map.scss';
+
 const style = {
   width: '100%',
   height: '800px',
@@ -38,7 +40,7 @@ class Map extends React.Component {
     const wea = this.props;
     return (
       <div id="map" style={style}>
-        {/* <Result wheather={wea} className="div" /> */}
+        <Result wheather={wea} />
       </div>
     );
   }

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import i18n from "../../i18";
+import "./buttons.scss";
 
 class Languages extends Component {
   handleOnClick = e => {

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {translate} from 'react-i18next';
-// import i18n from '../../i18';
+import '../../scss/form.scss';
 
 const Form = ({submit, t, name, onChange}) => {
   return (

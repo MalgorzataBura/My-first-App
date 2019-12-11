@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {translate} from 'react-i18next';
+import '../../scss/results.scss';
 
 const Result = ({wheather, t}) => {
   const {

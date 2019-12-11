@@ -21,6 +21,7 @@
     "Rain": "Regen",
     "Thunderstorm": "Gewitter",
     "Clouds": "Wolken",
-    "Drizzle": "Nieseln"
+    "Drizzle": "Nieseln",
+    "Clear": "Klar"
   }
 }

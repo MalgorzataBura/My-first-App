@@ -1,6 +1,6 @@
 import Map from './Map';
 import React, {Component} from 'react';
-// import Home from "./Home";
+import '../../scss/map.scss';
 
 class AppMap extends Component {
   state = {
@@ -19,14 +19,13 @@ class AppMap extends Component {
             },
           },
         ],
-        zoom: 16,
+        zoom: 14,
       });
     }
   }
 
   render () {
     const {markersData, zoom} = this.state;
-    // const wea = this.props;
     return (
       <div>
         <Map markersData={markersData} zoom={zoom} />

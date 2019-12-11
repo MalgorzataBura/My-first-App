@@ -21,6 +21,7 @@
     "Rain": "Deszcz",
     "Thunderstorm": "Burza",
     "Clouds": "Pochmurno",
-    "Drizzle": "Mżawka"
+    "Drizzle": "Mżawka",
+    "Clear": "Bezchmurnie"
   }
 }

@@ -7,6 +7,7 @@ import Languages from "../Buttons/Buttons";
 import AppMap from "./AppMap";
 
 
+
 class Home extends Component {
   state = {
     name: "",
@@ -85,7 +86,7 @@ class Home extends Component {
           submit={this.handleOnSubmit}
         />  
         <div >
-        <Result wheather={this.state} className="div" ></Result>
+        <Result wheather={this.state}  ></Result>
         <AppMap positions={this.positions} ></AppMap>
         </div>
       </>
