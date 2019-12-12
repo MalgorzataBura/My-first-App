@@ -1,0 +1,18 @@
+a {
+  font-size: 22px;
+  color: black;
+  background-color: lightgray;
+  border: 1px solid black;
+  padding: 2px;
+}
+ul {
+  display: inline-block;
+}
+ul li {
+  display: inline;
+  white-space: nowrap;
+}
+.liStyle {
+  list-style: "none";
+  font-size: "25px";
+}

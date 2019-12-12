@@ -5,8 +5,9 @@ import "../../scss/index.scss";
 import Clock from "./Clock";
 import Languages from "../Buttons/Buttons";
 import AppMap from "./AppMap";
-
-
+import Attractions from "../Attractions";
+import { NavLink } from "react-router-dom";
+import { HashRouter as Router, Link } from "react-router-dom";
 
 class Home extends Component {
   state = {
@@ -22,7 +23,7 @@ class Home extends Component {
     weather: [],
     error: false,
     lat: "",
-    lon: "",
+    lon: ""
   };
   handleOnChange = e => {
     this.setState({
@@ -34,7 +35,7 @@ class Home extends Component {
     const { lat, lon } = this.state;
     return {
       lat,
-      lon,
+      lon
     };
   }
   handleOnSubmit = e => {
@@ -62,32 +63,35 @@ class Home extends Component {
           clouds: data.clouds.all,
           icon: data.weather[0].icon,
           lat: data.coord.lat,
-          lon: data.coord.lon,
+          lon: data.coord.lon
         });
       })
       .catch(error => console.log(error));
     this.setState({
       error: true,
-      city: this.state.name,
+      city: this.state.name
     });
-  
   };
   render() {
     return (
       <>
         <header>
-          <Languages />
+          {/* <Languages /> */}
           <div>Weather App</div>
         </header>
+        <li>
+          <NavLink to="/attractions">atrakcje </NavLink>
+        </li>
+
         <Clock />
         <Form
           name={this.state.name}
           onChange={this.handleOnChange}
           submit={this.handleOnSubmit}
-        />  
-        <div >
-        <Result wheather={this.state}  ></Result>
-        <AppMap positions={this.positions} ></AppMap>
+        />
+        <div>
+          <Result wheather={this.state}></Result>
+          <AppMap positions={this.positions}></AppMap>
         </div>
       </>
     );
