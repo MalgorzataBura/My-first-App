@@ -76,13 +76,10 @@ class Home extends Component {
     return (
       <>
         <header>
-          {/* <Languages /> */}
+          <Languages />
+          <NavLink to="/attractions">atrakcje </NavLink>
           <div>Weather App</div>
         </header>
-        <li>
-          <NavLink to="/attractions">atrakcje </NavLink>
-        </li>
-
         <Clock />
         <Form
           name={this.state.name}

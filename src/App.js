@@ -4,8 +4,8 @@ import i18n from "./i18";
 import "./scss/index.scss";
 import "./scss/list.scss";
 import Home from "./components/Home";
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
-// import Navigation from "./components/Navigation";
+import { HashRouter as Router, Route, Switch, Link } from "react-router-dom";
+import Navigation from "./components/Navigation";
 import Attractions from "./components/Attractions";
 import { NavLink } from "react-router-dom";
 import Languages from "./components/Buttons/Buttons";
@@ -20,34 +20,14 @@ const App = () => {
       .then(data => setMenu(data));
   }, []);
 
-  const activeStyle = {
-    border: `solid 1px green`
-  };
-
-  const Navigation = ({ name, age }) => (
-    <ul className="liStyle">
-      <li>
-        <Languages />
-      </li>
-      <li>
-        <NavLink exact to="/" activeStyle={activeStyle}>
-          Home
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to="/attractions" activeStyle={activeStyle}>
-          Atrakcje
-        </NavLink>
-      </li>
-    </ul>
-  );
   return (
     <I18nextProvider i18n={i18n}>
       <Router>
         <>
-          <Navigation items={menu} />
+          {/* <Navigation items={menu} /> */}
+
           <Switch>
-            <Route exact path="/:language?" component={Home} />
+            <Route exact path="/" component={Home} />
             <Route path="/attractions" component={Attractions} />
           </Switch>
         </>
