@@ -24,5 +24,8 @@
     "Drizzle": "Nieseln",
     "Clear": "Klar",
     "Mist": "Nebel"
+  },
+  "attractions": {
+    "Atrakcje w mieście": "Sehenswürdigkeiten in der Stadt"
   }
 }

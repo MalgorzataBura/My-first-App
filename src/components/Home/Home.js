@@ -7,7 +7,7 @@ import Languages from "../Buttons/Buttons";
 import AppMap from "./AppMap";
 import Attractions from "../Attractions";
 import { NavLink } from "react-router-dom";
-import { HashRouter as Router, Link } from "react-router-dom";
+import { HashRouter as Router, Route, Link } from "react-router-dom";
 
 class Home extends Component {
   state = {
@@ -26,6 +26,7 @@ class Home extends Component {
     lon: ""
   };
   handleOnChange = e => {
+    e.preventDefault();
     this.setState({
       name: e.target.value
     });
@@ -68,16 +69,30 @@ class Home extends Component {
       })
       .catch(error => console.log(error));
     this.setState({
-      error: true,
+      // error: true,
       city: this.state.name
     });
   };
   render() {
+    console.log(this.state.lon);
+    console.log(this.state.lat);
+    const styleA = {
+      textDecoration: "none",
+      backgroundColor: "#8c5656",
+      margin: "15px",
+      marginTop: "20px",
+      padding: "10px",
+      borderRadius: "10%",
+      fontWeight: "bold"
+    };
+
     return (
       <>
         <header>
           <Languages />
-          <NavLink to="/attractions">atrakcje </NavLink>
+          <NavLink to="/attractions" style={styleA}>
+            City Guide
+          </NavLink>
           <div>Weather App</div>
         </header>
         <Clock />
@@ -89,7 +104,40 @@ class Home extends Component {
         <div>
           <Result wheather={this.state}></Result>
           <AppMap positions={this.positions}></AppMap>
+          {/* <Route path="/attractions" render={Attractions} /> */}
+          <Router>
+            {/* <Route
+              path="/attractions"
+              component={routeProps => (
+                <Attractions
+                  {...routeProps}
+                  lat={this.state.lat}
+                  lon={this.state.lon}
+                />
+              )}
+            /> */}
+
+            <Route path="/attractions">
+              <Attractions lat={this.state.lat} lon={this.state.lon} />
+            </Route>
+          </Router>
+
+          {/* <Route
+            path="/attractions"
+            component={() => (
+              <Attractions lat={this.state.lat} lon={this.state.lon} />
+            )} */}
+          {/* /> */}
+          {/* <Route path="/attractions">
+            <Attractions lat={this.state.lat} lon={this.state.lon} />
+          </Route> */}
         </div>
+        {/* <Route
+          path="/attractions"
+          component={props => (
+            <Attractions {...props} lat={this.state.lat} lon={this.state.lon} />
+          )} */}
+        />
       </>
     );
   }

@@ -24,5 +24,8 @@
     "Drizzle": "Drizzle",
     "Clear": "Clear",
     "Mist": "Mist"
+  },
+  "attractions": {
+    "Atrakcje w mieście": "Attractions in the city"
   }
 }
