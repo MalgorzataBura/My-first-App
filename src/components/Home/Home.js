@@ -74,8 +74,8 @@ class Home extends Component {
     });
   };
   render() {
-    console.log(this.state.lon);
-    console.log(this.state.lat);
+    // console.log(this.state.lon);
+    // console.log(this.state.lat);
     const styleA = {
       textDecoration: "none",
       backgroundColor: "#8c5656",
@@ -105,8 +105,8 @@ class Home extends Component {
           <Result wheather={this.state}></Result>
           <AppMap positions={this.positions}></AppMap>
           {/* <Route path="/attractions" render={Attractions} /> */}
-          <Router>
-            {/* <Route
+          {/* <Router> */}
+          {/* <Route
               path="/attractions"
               component={routeProps => (
                 <Attractions
@@ -117,10 +117,10 @@ class Home extends Component {
               )}
             /> */}
 
-            <Route path="/attractions">
+          {/* <Route path="/attractions">
               <Attractions lat={this.state.lat} lon={this.state.lon} />
             </Route>
-          </Router>
+          </Router> */}
 
           {/* <Route
             path="/attractions"
