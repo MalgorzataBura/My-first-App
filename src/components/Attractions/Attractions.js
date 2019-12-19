@@ -15,13 +15,11 @@ class Attractions extends Component {
 
   componentDidMount() {
     const ApiKey = "AIzaSyDYKDvuOIR_IX9fjr-91wljaFSHLFWg0k8";
-    const lon = 17.926126;
-    const lat = 50.671062;
     const radius = 40000;
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    const ApiURL = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lon}&radius=${radius}&type=restaurant&keyword=cruise&key=${ApiKey}`;
-    const ApiURLCafe = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lon}&radius=${radius}&type=cafe&keyword=cruise&key=${ApiKey}`;
-    const ApiURLEstablishment = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lon}&radius=${radius}&type=establishment&keyword=cruise&key=${ApiKey}`;
+    const ApiURL = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${this.props.positions.lat},${this.props.positions.lon}&radius=${radius}&type=restaurant&keyword=cruise&key=${ApiKey}`;
+    const ApiURLCafe = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${this.props.positions.lat},${this.props.positions.lon}&radius=${radius}&type=cafe&keyword=cruise&key=${ApiKey}`;
+    const ApiURLEstablishment = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${this.props.positions.lat},${this.props.positions.lon}&radius=${radius}&type=establishment&keyword=cruise&key=${ApiKey}`;
     fetch(proxyurl + ApiURL)
       .then(response => {
         if (response.ok) {
@@ -34,8 +32,6 @@ class Attractions extends Component {
         this.setState({
           restaurant: data.results
         });
-        console.log(this.state.results);
-        console.log(this.state.address);
       })
       .catch(error => console.log(error));
     this.setState({
@@ -54,14 +50,12 @@ class Attractions extends Component {
         this.setState({
           cafe: data.results
         });
-        console.log(this.state.results);
-        console.log(this.state.address);
       })
       .catch(error => console.log(error));
-    this.setState({
-      lon: this.props.lon,
-      lat: this.props.lat
-    });
+    // this.setState({
+    //   lon: this.props.lon,
+    //   lat: this.props.lat
+    // });
     fetch(proxyurl + ApiURLEstablishment)
       .then(response => {
         if (response.ok) {
@@ -74,23 +68,23 @@ class Attractions extends Component {
         this.setState({
           establishment: data.results
         });
-        console.log(this.state.results);
-        console.log(this.state.address);
       })
       .catch(error => console.log(error));
-    this.setState({
-      lon: this.props.lon,
-      lat: this.props.lat
-    });
+    // this.setState({
+    //   lon: this.props.lon,
+    //   lat: this.props.lat
+    // });
   }
 
   render() {
+    console.log(this.props.positions);
+    console.log(this.props.positions.lat);
+    console.log(this.props.positions.lon);
     return (
       <>
         <div className="linkStyle">
           <Link to="/">home</Link>
         </div>
-        <div>{this.state.placeId}</div>
         <div>lon:{this.state.lon}</div>
         <div>lat:{this.state.lat}</div>
         <div className="table_container">
@@ -98,7 +92,7 @@ class Attractions extends Component {
             {this.state.restaurant.map((el, i) => (
               <>
                 <tbody>
-                  <tr className="tdStyle">
+                  <tr key={i} className="tdStyle">
                     <td className="tdStyle">
                       <img src={el.icon}></img>
                     </td>
@@ -112,7 +106,7 @@ class Attractions extends Component {
             {this.state.cafe.map((el, i) => (
               <>
                 <tbody>
-                  <tr className="tdStyle">
+                  <tr key={i} className="tdStyle">
                     <td className="tdStyle">
                       <img src={el.icon}></img>
                     </td>
@@ -126,7 +120,7 @@ class Attractions extends Component {
             {this.state.establishment.map((el, i) => (
               <>
                 <tbody>
-                  <tr className="tdStyle">
+                  <tr key={i} className="tdStyle">
                     <td className="tdStyle">
                       <img src={el.icon}></img>
                     </td>

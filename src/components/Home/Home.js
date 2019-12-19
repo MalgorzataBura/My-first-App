@@ -52,6 +52,10 @@ class Home extends Component {
       })
       .then(response => response.json())
       .then(data => {
+        // this.props.setPosition({
+        //   lat: data.coord.lat,
+        //   lon: data.coord.lon
+        // });
         this.setState({
           error: false,
           city: this.state.name,
@@ -69,13 +73,10 @@ class Home extends Component {
       })
       .catch(error => console.log(error));
     this.setState({
-      // error: true,
       city: this.state.name
     });
   };
   render() {
-    // console.log(this.state.lon);
-    // console.log(this.state.lat);
     const styleA = {
       textDecoration: "none",
       backgroundColor: "#8c5656",
@@ -104,40 +105,7 @@ class Home extends Component {
         <div>
           <Result wheather={this.state}></Result>
           <AppMap positions={this.positions}></AppMap>
-          {/* <Route path="/attractions" render={Attractions} /> */}
-          {/* <Router> */}
-          {/* <Route
-              path="/attractions"
-              component={routeProps => (
-                <Attractions
-                  {...routeProps}
-                  lat={this.state.lat}
-                  lon={this.state.lon}
-                />
-              )}
-            /> */}
-
-          {/* <Route path="/attractions">
-              <Attractions lat={this.state.lat} lon={this.state.lon} />
-            </Route>
-          </Router> */}
-
-          {/* <Route
-            path="/attractions"
-            component={() => (
-              <Attractions lat={this.state.lat} lon={this.state.lon} />
-            )} */}
-          {/* /> */}
-          {/* <Route path="/attractions">
-            <Attractions lat={this.state.lat} lon={this.state.lon} />
-          </Route> */}
         </div>
-        {/* <Route
-          path="/attractions"
-          component={props => (
-            <Attractions {...props} lat={this.state.lat} lon={this.state.lon} />
-          )} */}
-        />
       </>
     );
   }
