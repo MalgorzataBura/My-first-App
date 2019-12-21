@@ -5,25 +5,11 @@ import "../../scss/index.scss";
 import Clock from "./Clock";
 import Languages from "../Buttons/Buttons";
 import AppMap from "./AppMap";
-import Attractions from "../Attractions";
-import { NavLink } from "react-router-dom";
-import { HashRouter as Router, Route, Link } from "react-router-dom";
+
 
 class Home extends Component {
   state = {
-    name: "",
-    city: "",
-    sunrise: "",
-    sunset: "",
-    temp: "",
-    pressure: "",
-    wind: "",
-    clouds: "",
-    icon: "",
-    weather: [],
-    error: false,
-    lat: "",
-    lon: ""
+    name: ''
   };
   handleOnChange = e => {
     e.preventDefault();
@@ -32,13 +18,6 @@ class Home extends Component {
     });
   };
 
-  get positions() {
-    const { lat, lon } = this.state;
-    return {
-      lat,
-      lon
-    };
-  }
   handleOnSubmit = e => {
     e.preventDefault();
     const ApiURL = `http://api.openweathermap.org/data/2.5/weather?q=${this.state.name}&APPID=15e71e5e4e20b1661976298855fb6d84`;
@@ -52,11 +31,9 @@ class Home extends Component {
       })
       .then(response => response.json())
       .then(data => {
-        // this.props.setPosition({
-        //   lat: data.coord.lat,
-        //   lon: data.coord.lon
-        // });
-        this.setState({
+        this.props.setPosition({
+          lat: data.coord.lat,
+          lon: data.coord.lon,
           error: false,
           city: this.state.name,
           weather: data.weather[0].main,
@@ -67,33 +44,24 @@ class Home extends Component {
           wind: data.wind.speed,
           clouds: data.clouds.all,
           icon: data.weather[0].icon,
-          lat: data.coord.lat,
-          lon: data.coord.lon
         });
       })
       .catch(error => console.log(error));
-    this.setState({
+    this.props.setPosition({
       city: this.state.name
     });
   };
   render() {
-    const styleA = {
-      textDecoration: "none",
-      backgroundColor: "#8c5656",
-      margin: "15px",
-      marginTop: "20px",
-      padding: "10px",
-      borderRadius: "10%",
-      fontWeight: "bold"
+    const { lat, lon } = this.props;
+    const positions = {
+      lat,
+      lon
     };
 
     return (
       <>
         <header>
           <Languages />
-          <NavLink to="/attractions" style={styleA}>
-            City Guide
-          </NavLink>
           <div>Weather App</div>
         </header>
         <Clock />
@@ -103,8 +71,8 @@ class Home extends Component {
           submit={this.handleOnSubmit}
         />
         <div>
-          <Result wheather={this.state}></Result>
-          <AppMap positions={this.positions}></AppMap>
+          <Result wheather={this.props} />
+          <AppMap positions={positions} />
         </div>
       </>
     );

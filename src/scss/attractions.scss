@@ -10,14 +10,45 @@
     font-weight: bold;
   }
 }
-.tdStyle {
-  border: 1px solid black;
-  height: 80px;
-  weight: 500px;
-  background-color: lightgray;
-  margin-top: 100px;
-}
+
 .table_container {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  width:100%;
+  flex-direction: column;
+  padding: 20px;
+}
+.link{
+  height: 50px;
+  font-size: 25px;
+  padding-left: 10px;
+  margin-left: 20px;
+}
+
+.attTable{
+  .tdStyle {
+  box-shadow: 30px 30px 30px black;
+  background-color: lightgray;
+  margin-top: 100px;
+  vertical-align: center;
+  align-items: center;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'Century Gothic';
+  padding: 20px;
+}
+tbody:first-of-type td:first-child {
+  // border-top: 1px solid black;
+  border-top-left-radius: 20px;
+  
+}
+tbody:first-of-type td:last-child {
+  border-top-right-radius: 20px;
+}
+tbody:last-of-type td:last-child {
+  border-bottom-right-radius: 20px;
+}
+tbody:last-of-type td:first-child {
+  border-bottom-left-radius: 20px;
+}
 }

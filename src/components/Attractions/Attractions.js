@@ -4,7 +4,7 @@ import "../../scss/attractions.scss";
 
 class Attractions extends Component {
   state = {
-    lon: "vvvvvv",
+    lon: "",
     lat: "",
     restaurant: [],
     cafe: [],
@@ -52,10 +52,7 @@ class Attractions extends Component {
         });
       })
       .catch(error => console.log(error));
-    // this.setState({
-    //   lon: this.props.lon,
-    //   lat: this.props.lat
-    // });
+
     fetch(proxyurl + ApiURLEstablishment)
       .then(response => {
         if (response.ok) {
@@ -70,25 +67,17 @@ class Attractions extends Component {
         });
       })
       .catch(error => console.log(error));
-    // this.setState({
-    //   lon: this.props.lon,
-    //   lat: this.props.lat
-    // });
   }
 
   render() {
-    console.log(this.props.positions);
-    console.log(this.props.positions.lat);
-    console.log(this.props.positions.lon);
+
     return (
       <>
-        <div className="linkStyle">
-          <Link to="/">home</Link>
+        <div >
+          <Link to="/" className="btn btn-secondary link">home</Link>
         </div>
-        <div>lon:{this.state.lon}</div>
-        <div>lat:{this.state.lat}</div>
-        <div className="table_container">
-          <table>
+        <div className="table_container ">
+          <table className="attTable">
             {this.state.restaurant.map((el, i) => (
               <>
                 <tbody>

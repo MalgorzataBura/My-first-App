@@ -11,7 +11,7 @@ const Form = ({ submit, t, name, onChange }) => {
         placeholder={t("wpisz miasto")}
         onChange={onChange}
       />
-      <button>{t("wyszukaj miasto")}</button>
+      <button className="formButton">{t("wyszukaj miasto")}</button>
     </form>
   );
 };

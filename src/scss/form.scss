@@ -1,14 +1,13 @@
 form {
   font-size: 3em;
   text-align: center;
-}
-input {
-  height: 30px;
+ input {
+  height: 35px;
   width: 400px;
   font-size: 0.5em;
-}
-button {
-  height: 30px;
+} 
+.formButton {
+  height: 35px;
   font-size: 0.4em;
   transition-duration: 0.4s;
 }
@@ -16,4 +15,8 @@ button:hover {
   background-color: #008cba;
   color: white;
   border-style: inset;
+  }
 }
+
+
+
