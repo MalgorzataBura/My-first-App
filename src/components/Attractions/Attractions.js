@@ -71,9 +71,12 @@ class Attractions extends Component {
 
   render() {
 
+    const style={
+      backgroundColor:"#86a7ca",
+    }
     return (
-      <>
-        <div >
+      <div style={style}>
+        <div>
           <Link to="/" className="btn btn-secondary link">home</Link>
         </div>
         <div className="table_container ">
@@ -122,7 +125,7 @@ class Attractions extends Component {
             ))}
           </table>
         </div>
-      </>
+      </div>
     );
   }
 }

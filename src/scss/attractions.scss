@@ -38,17 +38,15 @@
   padding: 20px;
 }
 tbody:first-of-type td:first-child {
-  // border-top: 1px solid black;
   border-top-left-radius: 20px;
-  
-}
+  }
 tbody:first-of-type td:last-child {
   border-top-right-radius: 20px;
-}
+  }
 tbody:last-of-type td:last-child {
   border-bottom-right-radius: 20px;
-}
+  }
 tbody:last-of-type td:first-child {
   border-bottom-left-radius: 20px;
-}
+  }
 }

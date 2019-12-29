@@ -60,6 +60,7 @@ class Home extends Component {
 
     return (
       <>
+      <div className="container_main">
         <header>
           <Languages />
           <div>Weather App</div>
@@ -70,6 +71,7 @@ class Home extends Component {
           onChange={this.handleOnChange}
           submit={this.handleOnSubmit}
         />
+        </div>
         <div>
           <Result wheather={this.props} />
           <AppMap positions={positions} />
